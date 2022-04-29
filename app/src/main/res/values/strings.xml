@@ -7,4 +7,6 @@
     <string name="bottom_nav_broadcast_receiver">BroadcastReceiver</string>
     <string name="bottom_nav_content_provider">ContentProvider</string>
 
+    <string name="register_broadcast">Register Broadcast</string>
+    <string name="unregister_broadcast">Unregister Broadcast</string>
 </resources>

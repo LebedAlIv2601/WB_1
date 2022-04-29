@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BroadcastReceiverExampleFragment">
+    tools:context=".broadcast.BroadcastReceiverExampleFragment">
 
     <TextView
-        android:id="@+id/broadcast__header_text_view"
+        android:id="@+id/broadcast_header_text_view"
         style="@style/header_text_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="@string/bottom_nav_broadcast_receiver"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -18,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/button1"
+        android:id="@+id/button_register_broadcast"
         style="@style/button_card_view_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -26,14 +27,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/broadcast__header_text_view">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:id="@+id/register_broadcast_text_view"
+            android:textAlignment="center"
             style="@style/button_text_style"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/bottom_nav_broadcast_receiver" />
+            android:text="@string/register_broadcast" />
 
     </androidx.cardview.widget.CardView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

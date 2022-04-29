@@ -51,5 +51,17 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        if (binding?.bottomNavigationView?.selectedItemId != R.id.navigation_service){
+            binding?.bottomNavigationView?.selectedItemId = R.id.navigation_service
+        }
+    }
+
+    override fun onDestroy() {
+        binding = null
+        super.onDestroy()
+    }
+
 
 }

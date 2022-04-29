@@ -17,7 +17,7 @@
         tools:layout="@layout/fragment_content_provider_example" />
     <fragment
         android:id="@+id/navigation_broadcast_receiver"
-        android:name="com.example.wb_1.BroadcastReceiverExampleFragment"
+        android:name="com.example.wb_1.broadcast.BroadcastReceiverExampleFragment"
         android:label="@string/bottom_nav_broadcast_receiver"
         tools:layout="@layout/fragment_broadcast_receiver_example" />
 </navigation>
