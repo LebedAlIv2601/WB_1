@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_service"
+        android:title="@string/bottom_nav_service"
+        android:icon="@drawable/ic_service_24"
+        android:enabled="true"/>
+
+    <item
+        android:id="@+id/navigation_broadcast_receiver"
+        android:title="@string/bottom_nav_broadcast_receiver"
+        android:icon="@drawable/ic_broadcast_24"
+        android:enabled="true"/>
+
+    <item
+        android:id="@+id/navigation_content_provider"
+        android:title="@string/bottom_nav_content_provider"
+        android:icon="@drawable/ic_provider_24"
+        android:enabled="true"/>
+</menu>
