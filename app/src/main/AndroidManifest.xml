@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.wb_1" >
+    package="com.example.wb_1">
 
     <application
         android:allowBackup="true"
@@ -8,10 +8,21 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.WB_1" >
+        android:theme="@style/Theme.WB_1">
+        <service
+            android:name=".service.ExampleService"
+            android:enabled="true"
+            android:exported="true"></service>
+
+        <provider
+            android:name=".content_provider.ExampleContentProvider"
+            android:authorities="com.example.wb_1.provider_example"
+            android:enabled="true"
+            android:exported="true" />
+
         <activity
             android:name=".MainActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,8 +30,7 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".broadcast.ExampleReceiver">
-        </receiver>
+        <receiver android:name=".broadcast.ExampleReceiver" />
     </application>
 
 </manifest>

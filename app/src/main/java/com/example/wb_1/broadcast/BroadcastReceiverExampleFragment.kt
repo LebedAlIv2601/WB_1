@@ -49,4 +49,9 @@ class BroadcastReceiverExampleFragment : Fragment() {
 
     }
 
+    override fun onDestroy() {
+        binding = null
+        super.onDestroy()
+    }
+
 }

@@ -6,7 +6,6 @@ import androidx.navigation.NavOptions
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import com.example.wb_1.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -19,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding?.root)
 
         val navController = findNavController(R.id.nav_host_fragment)
+
 
         val navOptions = NavOptions.Builder()
             .setLaunchSingleTop(true)

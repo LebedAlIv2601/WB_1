@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/navigation_service"
-        android:name="com.example.wb_1.ServiceExampleFragment"
+        android:name="com.example.wb_1.service.ServiceExampleFragment"
         android:label="@string/bottom_nav_service"
         tools:layout="@layout/fragment_service_example" />
     <fragment
         android:id="@+id/navigation_content_provider"
-        android:name="com.example.wb_1.ContentProviderExampleFragment"
+        android:name="com.example.wb_1.content_provider.ContentProviderExampleFragment"
         android:label="@string/bottom_nav_content_provider"
         tools:layout="@layout/fragment_content_provider_example" />
     <fragment
