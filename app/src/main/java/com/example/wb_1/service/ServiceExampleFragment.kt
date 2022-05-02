@@ -8,6 +8,19 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.wb_1.databinding.FragmentServiceExampleBinding
 
+/**
+ * Экран, предназначенный для демонстрации работы Service.
+ * Функциональность экрана заключается в следующем:
+ * 1) Есть возможность запустить воспроизведение музыки, нажав на кнопку "Start". Музыка будет
+ * проигрываться в фоновом режиме.
+ * 2) Есть возможность остановить воспроизведение музыки, нажав на кнопку "Stop".
+ *
+ * Функционал Service используется приложениями для выполнения фоновых операций, не требующих
+ * непосредственного участия пользователя, например, проигрывание музыки, подгрузка файлов из сети.
+ * Примеры приложений: Яндекс.Музыка (проигрывание музыки), приложения для занятий спортом
+ * (подсчет различных показателей в фоновом режиме).
+ */
+
 class ServiceExampleFragment : Fragment() {
 
     private var binding: FragmentServiceExampleBinding? = null
@@ -25,10 +38,12 @@ class ServiceExampleFragment : Fragment() {
 
         binding?.apply {
             buttonStartMusic.setOnClickListener {
+                //Запуск сервиса
                 activity?.startService(Intent(context, ExampleService::class.java))
             }
 
             buttonStopMusic.setOnClickListener {
+                //Остановка сервиса
                 activity?.stopService(Intent(context, ExampleService::class.java))
             }
         }

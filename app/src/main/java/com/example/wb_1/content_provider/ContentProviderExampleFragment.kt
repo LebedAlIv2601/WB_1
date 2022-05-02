@@ -12,6 +12,19 @@ import android.widget.Toast
 import com.example.wb_1.R
 import com.example.wb_1.databinding.FragmentContentProviderExampleBinding
 
+/**
+ * Экран, предназначенный для демонстрации работы ContentProvider и ContentResolver.
+ * Функциональность экрана заключается в следующем:
+ * 1) Есть возможность вставить в БД записи о новых пользователях через ContentProvider, вписав имя
+ * нового пользователя в поле EditText и нажав на кнопку "Insert Data".
+ * 2) Есть возможность получить данные из БД с помощью ContentResolver, нажав на кнопку "Get Data".
+ * Данные будут выведены в текстовом поле.
+ *
+ * Функционал ContentProvider и ContentResolver используется приложениями для доступа к данным
+ * других приложений, например, записанным в телефоне контактам. Примеры таких приложений:
+ * GetContacts, VK.
+ */
+
 class ContentProviderExampleFragment : Fragment() {
 
     private var binding: FragmentContentProviderExampleBinding? = null
@@ -41,27 +54,30 @@ class ContentProviderExampleFragment : Fragment() {
     }
 
     private fun insertData() {
-        // class to add values in the database
+        //Создаем экземпляр класса ContentValues для добавления в БД
         val values = ContentValues()
 
-        // fetching text from user
+        // Кладем в values значение из поля ввода текста
         values.put("name", binding?.dataEditText?.getText().toString())
 
-        // inserting into database through content URI
+        // Вставка данных в БД через URI
         activity?.contentResolver?.insert(
             Uri.parse("content://com.example.wb_1.provider_example/users"),
             values)
 
-        // displaying a toast message
+        // Высвечиваем Toast с уведомлением о вставке новой записи в БД
         Toast.makeText(context, "New Record Inserted", Toast.LENGTH_LONG).show()
     }
 
     @SuppressLint("Range")
     private fun getData() {
+
+        //Создаем объект класса Cursor для доступа к данным из БД
         val cursor = activity?.contentResolver?.query(
             Uri.parse("content://com.example.wb_1.provider_example/users"),
             null, null, null, null)
 
+        //Записываем каждую строку в StringBuilder и выводим на TextView в случае успеха
         if (cursor!!.moveToFirst()) {
             val dataString = StringBuilder()
             while (!cursor.isAfterLast) {

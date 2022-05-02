@@ -8,10 +8,21 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.wb_1.databinding.ActivityMainBinding
 
+/**
+ * Экран, предназначенный для демонстрации работы Activity.
+ * В данном случае активность является единственной в приложении. В ней осуществляется навигация
+ * между фрагментами приложения с помощью BottomNavigation.
+ *
+ * Функционал Activity используется для отображения пользовательского интерфейса и его изменения при
+ * взаимодействии с пользователем. Используется во всех приложениях.
+ */
+
+
 class MainActivity : AppCompatActivity() {
 
     private var binding: ActivityMainBinding? = null
 
+    //Метод вызываемый при создании Activity
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -58,6 +69,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    //Метод вызываемый при разрушении Activity.
     override fun onDestroy() {
         binding = null
         super.onDestroy()
